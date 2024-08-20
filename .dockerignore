@@ -1,0 +1,11 @@
+# Ignore all files
+*
+
+# Don't ignore these files
+!.dockerignore
+!Dockerfile
+!package.json
+!package-lock.json
+!tsconfig.json
+!public/
+!src/
