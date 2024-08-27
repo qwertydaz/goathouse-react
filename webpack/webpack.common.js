@@ -7,7 +7,7 @@ const commonConfig = {
   entry: './src/index.tsx',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, '../dist'),
     clean: true,
   },
   resolve: {
@@ -38,22 +38,12 @@ const commonConfig = {
       patterns: [
         {
           from: path.resolve(__dirname, '../public'),
-          to: path.resolve(__dirname, 'dist'),
+          to: path.resolve(__dirname, '../dist'),
           filter: (filePath) => !filePath.endsWith('index.html'),
         },
       ],
     }),
   ],
-  devServer: {
-    static: { directory: path.join(__dirname, 'dist') },
-    compress: true,
-    port: 9000,
-    open: true,
-    historyApiFallback: true,
-  },
-  stats: {
-    errorDetails: false,
-  },
 };
 
 export default commonConfig;
