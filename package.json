@@ -1,11 +1,15 @@
 {
   "name": "movie-picker",
   "version": "1.0-SNAPSHOT",
+  "type": "module",
   "private": true,
   "description": "An app for picking movies with friends",
   "scripts": {
-    "build": "webpack --config webpack.config.ts",
-    "start": "webpack serve --config webpack.config.ts"
+    "lint": "npx eslint --config eslint.config.js .",
+    "build": "npm run lint && webpack --config webpack/webpack.prod.js",
+    "start": "npm run lint && webpack serve --config webpack/webpack.dev.js",
+    "clean": "rm -rf node_modules dist",
+    "clean:build": "npm run clean && npm i"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
@@ -19,14 +23,24 @@
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@types/webpack": "^5.28.5",
-    "@types/webpack-dev-server": "^4.7.2",
+    "@types/webpack-env": "^1.18.5",
+    "@typescript-eslint/eslint-plugin": "^8.3.0",
+    "@typescript-eslint/parser": "^8.3.0",
+    "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^7.1.2",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "html-entities": "^2.5.2",
     "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.9.1",
     "style-loader": "^4.0.0",
+    "terser-webpack-plugin": "^5.3.10",
     "ts-loader": "^9.5.1",
-    "ts-node": "^10.9.2",
-    "webpack": "^5.93.0",
-    "webpack-cli": "^5.1.4"
+    "webpack": "^5.94.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4",
+    "webpack-merge": "^6.0.1"
   },
   "browserslist": {
     "production": [

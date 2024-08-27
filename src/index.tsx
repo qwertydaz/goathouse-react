@@ -5,14 +5,12 @@ import store from './store/store';
 import './styles.css';
 import App from './App';
 
-const root = createRoot(
-  document.getElementById('root') as HTMLElement,
-);
+const root = createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App/>
+      <App />
     </Provider>
   </React.StrictMode>,
 );

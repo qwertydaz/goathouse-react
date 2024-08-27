@@ -1,12 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
+    "target": "es2020",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "outDir": "./dist",
+    "rootDir": "./src",
     "strict": true,
+    "esModuleInterop": true,
     "skipLibCheck": true,
-    "jsx": "react"
-  }
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": [
+    "src/**/*",
+    "webpack.config.js"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
