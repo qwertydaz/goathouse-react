@@ -1,9 +1,10 @@
 import React from 'react';
+import DecisionWheel from './decision-wheel/DecisionWheel';
 
 const MoviePicker: React.FC = () => {
   return (
-    <div data-testid="movie-picker" className="movie-picker">
-      movie picker (❁´◡`❁)
+    <div className='movie-picker'>
+      <DecisionWheel />
     </div>
   );
 };
