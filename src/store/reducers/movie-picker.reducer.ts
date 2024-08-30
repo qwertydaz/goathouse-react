@@ -1,23 +1,31 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 interface MoviePickerState {
-  // state properties
+  selectedMovie?: string;
+  spinAngle: number;
 }
 
 const initialState: MoviePickerState = {
-  // initial state
+  selectedMovie: undefined,
+  spinAngle: 0,
 };
 
 const moviePickerSlice = createSlice({
   name: 'movie-picker',
   initialState,
   reducers: {
-    // actions
+    setSelectedMovie: (
+      state: MoviePickerState,
+      action: PayloadAction<string>,
+    ) => {
+      state.selectedMovie = action.payload;
+    },
+    setSpinAngle: (state: MoviePickerState, action: PayloadAction<number>) => {
+      state.spinAngle = action.payload;
+    },
   },
 });
 
-export const {
-  // actions
-} = moviePickerSlice.actions;
+export const { setSelectedMovie, setSpinAngle } = moviePickerSlice.actions;
 
 export default moviePickerSlice.reducer;

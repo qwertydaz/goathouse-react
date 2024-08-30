@@ -1,5 +1,5 @@
 import React from 'react';
-import DecisionWheel from './decision-wheel/DecisionWheel';
+import DecisionWheel from './decision-wheel/decision-wheel';
 
 const MoviePicker: React.FC = () => {
   return (

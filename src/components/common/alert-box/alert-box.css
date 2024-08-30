@@ -1,0 +1,82 @@
+.alert {
+    position: fixed;
+    z-index: 20;
+    max-width: 85%;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    opacity: 1;
+    transition: margin-top 150ms ease-out, opacity 150ms ease-out;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+@media screen and (max-height: 500px) {
+    .alert {
+        width: 80%;
+    }
+}
+
+.alert__toggler {
+    display: none;
+}
+
+.alert__toggler:not(:checked) ~ .alert {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    opacity: 0;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+    margin: -10px -1px -1px;
+}
+
+.alert__toggler:not(:checked) ~ .alert__mask {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    opacity: 0;
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+.alert__mask {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transition: opacity 150ms ease-out;
+    background: RGBA(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.alert__close::after {
+    content: '✕';
+    position: absolute;
+    display: inline-block;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.alert__title {
+    margin: 0;
+}
+
+.alert__content {
+    background: #eee;
+    padding: 30px;
+    max-height: 90vh;
+    overflow-x: auto;
+}

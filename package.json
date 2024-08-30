@@ -5,15 +5,14 @@
   "private": true,
   "description": "An app for picking movies with friends",
   "scripts": {
-    "lint": "npx eslint --config eslint.config.js .",
-    "build": "npm run lint && webpack --config webpack/webpack.prod.js",
+    "lint": "npx eslint --config eslint.config.js --fix .",
+    "build": "webpack --config webpack/webpack.prod.js",
     "start": "npm run lint && webpack serve --config webpack/webpack.dev.js",
     "clean": "rm -rf node_modules dist",
     "clean:build": "npm run clean && npm i"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.7",
-    "antd": "^5.20.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-redux": "^9.1.2"
