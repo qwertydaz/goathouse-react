@@ -1,15 +1,16 @@
 :root {
-    --gap-size: 100px;
+    --horizontal-gap-size: 50px;
+    --vertical-gap-size: 100px;
 }
 
 .decision-wheel {
     --wheel-option-color: #333;
     --wheel-option-index: 0;
     position: relative;
-    width: calc(100vw - 2 * var(--gap-size));
-    height: calc(100vh - 2 * var(--gap-size) - 100px - 20px);
-    max-width: calc(100vh - 2 * var(--gap-size) - 100px - 20px);
-    max-height: calc(100vw - 2 * var(--gap-size));
+    width: calc(100vw - 2 * var(--horizontal-gap-size));
+    height: calc(100vw - 2 * var(--horizontal-gap-size));
+    max-width: calc(100vh - var(--vertical-gap-size) * 2 - 100px - 20px);
+    max-height: calc(100vh - var(--vertical-gap-size) * 2 - 100px - 20px);
     display: flex;
     justify-content: center;
     align-items: center;
