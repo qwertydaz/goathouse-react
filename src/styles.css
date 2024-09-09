@@ -59,9 +59,6 @@ body {
     gap: 0;
 }
 
-.footer .credits {
-}
-
 .main-content {
     flex: 1;
     display: flex;

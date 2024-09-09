@@ -19,8 +19,8 @@ const Wheel: React.FC = () => {
     'Option 3',
     'Option 4',
     'Option 5',
-    'Option 6',
-    'Option 7',
+    'Option 677777 777777 877777 977777',
+    'Option 77777777777777777777',
   ];
 
   const calculateWheelOptionStyles = () => {

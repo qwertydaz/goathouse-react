@@ -72,6 +72,7 @@
 
 .alert__title {
     margin: 0;
+    text-align: center;
 }
 
 .alert__content {
