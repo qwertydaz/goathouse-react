@@ -85,23 +85,29 @@
     overflow: hidden;
 }
 
+.decision-wheel .wheel .wheel-option .option-label-container {
+    width: 60%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .decision-wheel .wheel .wheel-option .option-label {
     transform: rotate(45deg);
-    font-size: 2em;
+    font-size: max(1.5vw, 2vh);
     font-weight: 700;
     color: #fff;
     text-shadow: 3px 5px 2px #00000026;
-    -webkit-text-stroke: 1px black;
     display: inline-block;
-    max-width: 90%; /* Prevents the text from expanding too much */
-    max-height: 90%; /* Prevents the text from growing too large */
-    padding: 10px; /* Adds padding to limit the text area */
+    max-width: 100%;
+    max-height: 100%;
+    padding: 10px;
     box-sizing: border-box;
     text-align: center;
     overflow: hidden;
-    transform-origin: center center; /* Ensures the text scales around the center */
+    transform-origin: center center;
 }
-
 
 .decision-wheel .decision-wheel-alert-box-content {
     margin: 0;
