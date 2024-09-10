@@ -16,7 +16,7 @@ const triggerConfetti = () => {
     spread: 70,
     origin: { y: 0.6 },
   });
-}
+};
 
 const AlertBox: React.FC<AlertBoxProps> = ({
   togglerClassName = undefined,

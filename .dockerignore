@@ -1,16 +1,8 @@
-# Ignore all files
-*
+node_modules
+dist
 
-# Don't ignore these files
-!.dockerignore
-!Dockerfile
-!package.json
-!package-lock.json
-!tsconfig.json
-!prettier.config.js
-!eslint.config.js
-!webpack/webpack.common.js
-!webpack/webpack.prod.js
-!webpack/utils.js
-!public/
-!src/
+.idea
+.vscode
+.dockerignore
+.gitignore
+.git

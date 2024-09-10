@@ -1,13 +1,14 @@
 {
   "name": "movie-picker",
+  "private": true,
   "version": "1.0-SNAPSHOT",
   "type": "module",
-  "private": true,
   "description": "An app for picking movies with friends",
   "scripts": {
-    "lint": "npx eslint --config eslint.config.js --fix .",
-    "build": "webpack --config webpack/webpack.prod.js",
-    "start": "npm run lint && webpack serve --config webpack/webpack.dev.js",
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
     "clean": "rm -rf node_modules dist",
     "clean:build": "npm run clean && npm i"
   },
@@ -19,40 +20,17 @@
     "react-redux": "^9.1.2"
   },
   "devDependencies": {
+    "@eslint/js": "^9.9.0",
     "@types/canvas-confetti": "^1.6.4",
-    "@types/node": "^22.4.1",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "@types/webpack": "^5.28.5",
-    "@types/webpack-env": "^1.18.5",
-    "@typescript-eslint/eslint-plugin": "^8.3.0",
-    "@typescript-eslint/parser": "^8.3.0",
-    "copy-webpack-plugin": "^12.0.2",
-    "css-loader": "^7.1.2",
-    "eslint-plugin-prettier": "^5.2.1",
-    "eslint-plugin-react": "^7.35.0",
-    "eslint-plugin-react-hooks": "^4.6.2",
-    "html-entities": "^2.5.2",
-    "html-webpack-plugin": "^5.6.0",
-    "mini-css-extract-plugin": "^2.9.1",
-    "style-loader": "^4.0.0",
-    "terser-webpack-plugin": "^5.3.10",
-    "ts-loader": "^9.5.1",
-    "webpack": "^5.94.0",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.4",
-    "webpack-merge": "^6.0.1"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "@vitejs/plugin-react": "^4.3.1",
+    "eslint": "^9.9.0",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "globals": "^15.9.0",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.0.1",
+    "vite": "^5.4.1"
   }
 }

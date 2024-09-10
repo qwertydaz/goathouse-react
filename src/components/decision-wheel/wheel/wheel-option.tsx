@@ -17,11 +17,11 @@ const getLabelStyle = (label: HTMLSpanElement) => {
   const scale = Math.min(
     parentWidth / labelWidth,
     parentHeight / labelHeight,
-    1
+    1,
   );
 
   return `rotate(45deg) scale(${scale})`;
-}
+};
 
 const WheelOption: React.FC<WheelOptionProps> = ({ optionLabel, style }) => {
   const labelRef = useRef<HTMLSpanElement>(null);
@@ -33,7 +33,9 @@ const WheelOption: React.FC<WheelOptionProps> = ({ optionLabel, style }) => {
 
   return (
     <div className='wheel-option' style={style}>
-      <span className='option-label' ref={labelRef}>{optionLabel}</span>
+      <span className='option-label' ref={labelRef}>
+        {optionLabel}
+      </span>
     </div>
   );
 };
