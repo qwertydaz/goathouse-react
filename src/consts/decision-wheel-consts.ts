@@ -1,3 +1,5 @@
+import { Movie } from './decision-wheel-types.ts';
+
 const colours = [
   'red',
   'orange',
@@ -8,4 +10,26 @@ const colours = [
   'violet',
 ];
 
-export { colours };
+const getPlaceholderMovie = (id: number): Movie => {
+  return {
+    id,
+    title: `Option ${id}`,
+    overview: `Overview ${id}`,
+    genres: [
+      {
+        id,
+        name: `Genre ${id}`,
+      },
+    ],
+    release_date: '01/01/2021',
+  };
+};
+
+const getPlaceholderMovies = (numOfMovies: number): Movie[] => Array.from(
+  { length: numOfMovies }, (_, index) => getPlaceholderMovie(index)
+);
+
+export {
+  colours,
+  getPlaceholderMovies,
+};
