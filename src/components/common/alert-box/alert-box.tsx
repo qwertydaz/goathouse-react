@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './alert-box.css';
 import confetti from 'canvas-confetti';
+import { useSelector } from 'react-redux';
+import { selectSpinning } from '../../../store/selectors/movie-picker.selectors.ts';
 
 interface AlertBoxProps {
   togglerClassName: string;
-  delayInSeconds?: number;
   confetti?: boolean;
   title?: string;
   content?: React.ReactNode;
@@ -20,17 +21,18 @@ const triggerConfetti = () => {
 
 const AlertBox: React.FC<AlertBoxProps> = ({
   togglerClassName = undefined,
-  delayInSeconds = 0,
   confetti = false,
   title = undefined,
   content = undefined,
 }) => {
   const alertTogglerRef = useRef<HTMLInputElement | null>(null);
   const [isToggling, setIsToggling] = useState(false);
+
+  const isSpinning = useSelector(selectSpinning);
+
   let titleElement;
 
-  // set up event listener to open alert box
-  useEffect(() => {
+  const setUpEventListeners = () => {
     const toggler = document.querySelector(`.${togglerClassName}`);
     alertTogglerRef.current = document.getElementById(
       'open-alert',
@@ -48,7 +50,7 @@ const AlertBox: React.FC<AlertBoxProps> = ({
         setIsToggling(false);
 
         if (confetti) triggerConfetti();
-      }, delayInSeconds * 1000);
+      });
     };
 
     if (toggler) toggler.addEventListener('click', handleOpenEvent);
@@ -56,7 +58,11 @@ const AlertBox: React.FC<AlertBoxProps> = ({
     return () => {
       if (toggler) toggler.removeEventListener('click', handleOpenEvent);
     };
-  }, [togglerClassName, delayInSeconds, isToggling]);
+  }
+
+  useEffect(() => {
+    setUpEventListeners();
+  }, [togglerClassName, isToggling]);
 
   if (title) titleElement = <h1 className='alert__title'>{title}</h1>;
 

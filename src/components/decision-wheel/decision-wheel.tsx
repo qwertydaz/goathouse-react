@@ -5,11 +5,11 @@ import DecisionWheelAlertBox from './alert-box/decision-wheel-alert-box.tsx';
 
 const DecisionWheel: React.FC = () => {
   return (
-    <>
+    <div className='decision-wheel'>
       <SpinningWheel />
       <SpinButton />
       <DecisionWheelAlertBox />
-    </>
+    </div>
   )
 };
 

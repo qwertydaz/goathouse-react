@@ -3,13 +3,15 @@ import { Movie } from '../../consts/decision-wheel-types.ts';
 
 interface MoviePickerState {
   selectedMovie?: Movie;
-  spinComplete: boolean;
+  selectedIndex: number;
+  isSpinning: boolean;
   wheelOptions: Movie[];
 }
 
 const initialState: MoviePickerState = {
   selectedMovie: undefined,
-  spinComplete: false,
+  selectedIndex: 0,
+  isSpinning: false,
   wheelOptions: [],
 };
 
@@ -20,8 +22,11 @@ const moviePickerSlice = createSlice({
     setSelectedMovie: (state: MoviePickerState, action: PayloadAction<Movie>) => {
       state.selectedMovie = action.payload;
     },
-    setSpinComplete: (state: MoviePickerState, action: PayloadAction<boolean>) => {
-      state.spinComplete = action.payload;
+    setSelectedIndex: (state: MoviePickerState, action: PayloadAction<number>) => {
+      state.selectedIndex = action.payload;
+    },
+    setSpinning: (state: MoviePickerState, action: PayloadAction<boolean>) => {
+      state.isSpinning = action.payload;
     },
     setWheelOptions: (state: MoviePickerState, action: PayloadAction<Movie[]>) => {
       state.wheelOptions = action.payload;
@@ -31,7 +36,8 @@ const moviePickerSlice = createSlice({
 
 export const {
   setSelectedMovie,
-  setSpinComplete,
+  setSelectedIndex,
+  setSpinning,
   setWheelOptions,
 } = moviePickerSlice.actions;
 
