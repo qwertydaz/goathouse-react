@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Wheel } from 'react-custom-roulette';
 import {
   selectSelectedIndex,
@@ -7,7 +7,11 @@ import {
 } from '../../../store/selectors/movie-picker.selectors.ts';
 import { useDispatch, useSelector } from 'react-redux';
 import { WheelData } from 'react-custom-roulette/dist/components/Wheel/types';
-import { setSelectedMovie, setSpinning, setWheelOptions } from '../../../store/reducers/movie-picker.reducer.ts';
+import {
+  setSelectedMovie,
+  setSpinning,
+  setWheelOptions,
+} from '../../../store/reducers/movie-picker.reducer.ts';
 import { colours, getPlaceholderMovies } from '../../../consts/decision-wheel-consts.ts';
 
 const SpinningWheel: React.FC = () => {
@@ -15,28 +19,30 @@ const SpinningWheel: React.FC = () => {
 
   const dispatch = useDispatch();
   const wheelOptions = useSelector(selectWheelOptions);
-  const spinComplete = useSelector(selectSpinning);
+  const isSpinning = useSelector(selectSpinning);
   const selectedIndex = useSelector(selectSelectedIndex);
 
   useEffect(() => {
     dispatch(setWheelOptions(getPlaceholderMovies(7)));
-  }, [dispatch]);
+  }, []);
 
   useEffect(() => {
     if (wheelOptions?.length === 0) setWheelData([{}]);
     else setWheelData(wheelOptions.map(option => ({ option: option.title })));
   }, [wheelOptions]);
 
+  const handleStopSpinning = useCallback(() => {
+    dispatch(setSpinning(false));
+    dispatch(setSelectedMovie(wheelOptions[selectedIndex]));
+  }, [wheelOptions, selectedIndex]);
+
   return (
     <div className='spinning-wheel'>
       <Wheel
-        mustStartSpinning={spinComplete}
+        mustStartSpinning={isSpinning}
         prizeNumber={selectedIndex}
         data={wheelData}
-        onStopSpinning={() => {
-          dispatch(setSpinning(false))
-          dispatch(setSelectedMovie(wheelOptions[selectedIndex]));
-        }}
+        onStopSpinning={handleStopSpinning}
         backgroundColors={colours}
         outerBorderColor='#ccc'
         outerBorderWidth={5}
