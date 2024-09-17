@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import './alert-box.css';
 import confetti from 'canvas-confetti';
 
 interface AlertBoxProps {
   togglerClassName: string;
-  delayInSeconds?: number;
-  confetti?: boolean;
+  shouldToggleOpen: boolean;
+  hasConfetti?: boolean;
   title?: string;
   content?: React.ReactNode;
 }
@@ -19,46 +19,48 @@ const triggerConfetti = () => {
 };
 
 const AlertBox: React.FC<AlertBoxProps> = ({
-  togglerClassName = undefined,
-  delayInSeconds = 0,
-  confetti = false,
+  togglerClassName,
+  shouldToggleOpen,
+  hasConfetti = false,
   title = undefined,
   content = undefined,
 }) => {
   const alertTogglerRef = useRef<HTMLInputElement | null>(null);
-  const [isToggling, setIsToggling] = useState(false);
-  let titleElement;
 
-  // set up event listener to open alert box
+  const [isToggled, setIsToggled] = useState<boolean>(false);
+
   useEffect(() => {
     const toggler = document.querySelector(`.${togglerClassName}`);
-    alertTogglerRef.current = document.getElementById(
-      'open-alert',
-    ) as HTMLInputElement;
-
-    const handleOpenEvent = () => {
-      if (isToggling) return;
-
-      setIsToggling(true);
-
-      setTimeout(() => {
-        if (alertTogglerRef.current) {
-          alertTogglerRef.current.checked = !alertTogglerRef.current.checked;
-        }
-        setIsToggling(false);
-
-        if (confetti) triggerConfetti();
-      }, delayInSeconds * 1000);
-    };
-
-    if (toggler) toggler.addEventListener('click', handleOpenEvent);
+    if (toggler) toggler.addEventListener('click', closeAlert);
+    setIsToggled(true);
 
     return () => {
-      if (toggler) toggler.removeEventListener('click', handleOpenEvent);
+      if (toggler) toggler.removeEventListener('click', closeAlert);
+      setIsToggled(false);
     };
-  }, [togglerClassName, delayInSeconds, isToggling]);
+  }, [togglerClassName]);
 
-  if (title) titleElement = <h1 className='alert__title'>{title}</h1>;
+  useEffect(() => {
+    if (isToggled && shouldToggleOpen) openAlert();
+  }, [shouldToggleOpen]);
+
+  const openAlert = useCallback(() => {
+    alertTogglerRef.current = document.getElementById('open-alert') as HTMLInputElement;
+    if (alertTogglerRef.current) {
+      alertTogglerRef.current.checked = true;
+    }
+    if (hasConfetti) triggerConfetti();
+  }, [hasConfetti]);
+
+  const closeAlert = useCallback(() => {
+    if (alertTogglerRef.current) {
+      alertTogglerRef.current.checked = false;
+    }
+  }, []);
+
+  const titleElement = useMemo(() => {
+    return <h1 className='alert__title'>{title}</h1>
+  }, [title]);
 
   return (
     <div className='alert-box'>
@@ -67,7 +69,7 @@ const AlertBox: React.FC<AlertBoxProps> = ({
       <div className='alert'>
         <label className='alert__close' htmlFor='open-alert'></label>
         <div className='alert__content'>
-          {titleElement}
+          {title ? titleElement : null}
           {content}
         </div>
       </div>

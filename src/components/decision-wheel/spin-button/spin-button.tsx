@@ -1,35 +1,21 @@
-import React, { useState } from 'react';
-import {
-  setSpinAngle,
-  setSpinComplete,
-} from '../../../store/reducers/movie-picker.reducer';
-import { useDispatch } from 'react-redux';
-
-const calculateSpinAngle = () => {
-  const minAngle = 1800;
-  return Math.ceil(Math.random() * 1800) + minAngle;
-};
+import React, { useCallback } from 'react';
+import { setSpinning, setSelectedIndex } from '../../../store/reducers/movie-picker.reducer';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectSpinning, selectWheelOptions } from '../../../store/selectors/movie-picker.selectors.ts';
 
 const SpinButton: React.FC = () => {
   const dispatch = useDispatch();
-  const [isDisabled, setIsDisabled] = useState(false);
+  const wheelOptions = useSelector(selectWheelOptions);
+  const isSpinning = useSelector(selectSpinning);
 
-  const handleClick = () => {
-    setIsDisabled(true);
-
-    dispatch(setSpinComplete(false));
-
-    const angle = calculateSpinAngle();
-    dispatch(setSpinAngle(angle));
-
-    setTimeout(() => {
-      dispatch(setSpinComplete(true));
-      setIsDisabled(false);
-    }, 5000);
-  };
+  const handleClick = useCallback(() => {
+    const selectedIndex = Math.floor(Math.random() * wheelOptions.length);
+    dispatch(setSelectedIndex(selectedIndex));
+    dispatch(setSpinning(true));
+  }, [wheelOptions]);
 
   return (
-    <button className='spin-button' onClick={handleClick} disabled={isDisabled}>
+    <button className='spin-button' onClick={handleClick} disabled={isSpinning}>
       spin
     </button>
   );
