@@ -1,11 +1,11 @@
 type MovieResponse = {
   adult: boolean,
-  backdrop_path: string,
-  belongs_to_collection: {
+  backdropPath: string,
+  belongsToCollection: {
     id: number,
     name: string,
-    poster_path: string,
-    backdrop_path: string,
+    posterPath: string,
+    backdropPath: string,
   },
   budget: number,
   genres: {
@@ -14,57 +14,57 @@ type MovieResponse = {
   }[],
   homepage: string,
   id: number,
-  imdb_id: string,
-  origin_country: string[],
-  original_language: string,
-  original_title: string,
+  imdbId: string,
+  originCountry: string[],
+  originalLanguage: string,
+  originalTitle: string,
   overview: string,
   popularity: number,
-  poster_path: string,
-  production_companies: {
+  posterPath: string,
+  productionCompanies: {
     id: number,
-    logo_path: string,
+    logoPath: string,
     name: string,
-    origin_country: string,
+    originCountry: string,
   }[],
-  release_date: string,
+  releaseDate: string,
   revenue: number,
   runtime: number,
-  spoken_languages: {
-    english_name: string,
-    iso_639_1: string,
+  spokenLanguages: {
+    englishName: string,
+    iso6391: string,
     name: string,
   }[],
   status: string,
   tagline: string,
   title: string,
   video: boolean,
-  vote_average: number,
-  vote_count: number,
+  voteAverage: number,
+  voteCount: number,
 };
 
 type ShortMovieResponse = {
   adult: boolean,
-  backdrop_path: string,
-  genre_ids: number[],
+  backdropPath: string,
+  genreIds: number[],
   id: number,
-  original_language: string,
-  original_title: string,
+  originalLanguage: string,
+  originalTitle: string,
   overview: string,
   popularity: number,
-  poster_path: string,
-  release_date: string,
+  posterPath: string,
+  releaseDate: string,
   title: string,
   video: boolean,
-  vote_average: number,
-  vote_count: number,
+  voteAverage: number,
+  voteCount: number,
 };
 
 type PageableMovieResponse = {
   page: number,
   results: Movie[],
-  total_pages: number,
-  total_results: number,
+  totalPages: number,
+  totalResults: number,
 };
 
 type Movie = {
@@ -75,7 +75,7 @@ type Movie = {
     id: number,
     name: string,
   }[],
-  release_date: string,
+  releaseDate: string,
 };
 
 export type {

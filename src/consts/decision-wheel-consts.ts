@@ -21,7 +21,7 @@ const getPlaceholderMovie = (id: number): Movie => {
         name: `Genre ${id}`,
       },
     ],
-    release_date: '01/01/2021',
+    releaseDate: '01/01/2021',
   };
 };
 

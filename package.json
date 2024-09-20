@@ -9,6 +9,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
+    "build:preview": "npm run build && npm run preview",
     "clean": "rm -rf node_modules dist",
     "clean:build": "npm run clean && npm i"
   },
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
+    "@originjs/vite-plugin-federation": "^1.3.6",
     "@types/canvas-confetti": "^1.6.4",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
