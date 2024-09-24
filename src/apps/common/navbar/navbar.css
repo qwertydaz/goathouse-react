@@ -1,0 +1,92 @@
+.navbar {
+    background: #5161ce;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.navbar ul {
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    list-style-type: none;
+    float: left;
+}
+
+.navbar ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 45px;
+    display: block;
+    padding: 0 15px;
+    transition-duration: 0.7s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    z-index: 1;
+}
+
+.navbar ul li.active a {
+    color: #5161ce;
+    background-color: transparent;
+    transition: all 0.7s;
+}
+
+.navbar-selector {
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    top: 10px;
+    left: 0;
+    transition-duration: 0.5s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background-color: #fff;
+    border-radius: 15px 15px 0 0;
+    z-index: 0;
+}
+
+.navbar-selector .right,
+.navbar-selector .left {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    bottom: 10px;
+}
+
+.navbar-selector .right {
+    right: -25px;
+}
+
+.navbar-selector .left {
+    left: -25px;
+}
+
+.navbar-selector .right:before,
+.navbar-selector .left:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #5161ce;
+}
+
+.navbar-selector .right:before {
+    bottom: 0;
+    right: -25px;
+}
+
+.navbar-selector .left:before {
+    bottom: 0;
+    left: -25px;
+}
+
+.navbar-disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+}

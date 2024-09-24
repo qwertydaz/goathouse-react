@@ -1,14 +1,9 @@
-:root {
-    --horizontal-gap-size: 40px;
-    --vertical-gap-size: 100px;
-}
-
 .decision-wheel {
     position: relative;
     width: calc(100vw - 2 * var(--horizontal-gap-size));
     height: calc(100vw - 2 * var(--horizontal-gap-size));
-    max-width: calc(100vh - var(--vertical-gap-size) * 2 - 100px - 20px);
-    max-height: calc(100vh - var(--vertical-gap-size) * 2 - 100px - 20px);
+    max-width: calc(100vh - var(--vertical-gap-size) * 2 - 120px);
+    max-height: calc(100vh - var(--vertical-gap-size) * 2 - 120px);
     display: flex;
     justify-content: center;
     align-items: center;

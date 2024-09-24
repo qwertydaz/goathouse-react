@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Movie } from '../../consts/decision-wheel-types.ts';
+import { Movie } from '../../consts/decision-wheel-types';
 
 interface MoviePickerState {
   selectedMovie?: Movie;
