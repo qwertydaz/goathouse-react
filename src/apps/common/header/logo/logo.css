@@ -1,0 +1,5 @@
+.header .logo {
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+}
