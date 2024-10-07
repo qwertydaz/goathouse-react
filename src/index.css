@@ -24,6 +24,12 @@ body {
     --vertical-gap-size: 100px;
 }
 
+.app-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .main-content {
     flex: 1;
     display: flex;
