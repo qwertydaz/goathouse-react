@@ -48,8 +48,6 @@
     background-color: #fff;
     border-radius: 15px 15px 0 0;
     z-index: 0;
-    opacity: 1;
-    visibility: visible;
 }
 
 .navbar-selector .right,
@@ -90,8 +88,6 @@
 }
 
 .hidden {
-    opacity: 0;
-    visibility: hidden;
     height: 0;
     top: 100%;
 }

@@ -24,19 +24,11 @@ body {
     --vertical-gap-size: 100px;
 }
 
-.app-container {
+.pages {
     display: flex;
     flex-direction: column;
     flex: 1;
-}
-
-.main-content {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 20px;
-    margin-left: 20px;
+    padding: 20px;
 }
 
 .disabled {

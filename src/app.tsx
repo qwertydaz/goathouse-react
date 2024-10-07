@@ -11,10 +11,9 @@ const App: React.FC = () => {
   return (
     <Router>
       <Header />
+      <Navbar />
 
-      <div className='app-container'>
-        <Navbar />
-
+      <div className='pages'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/movie-picker' element={<MoviePicker />} />
