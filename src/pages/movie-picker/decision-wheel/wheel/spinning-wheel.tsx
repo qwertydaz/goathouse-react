@@ -2,17 +2,18 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Wheel } from 'react-custom-roulette';
 import { useDispatch, useSelector } from 'react-redux';
 import { WheelData } from 'react-custom-roulette/dist/components/Wheel/types';
-import { colours, getPlaceholderMovies } from '../../../../config/consts.ts';
+import { colours, getPlaceholderMovies } from '../../config/consts';
 import {
   selectSelectedIndex,
   selectSpinning,
   selectWheelOptions,
-} from '../../../../store/selectors/movie-picker.selectors.ts';
+} from '../../../../store/selectors/movie-picker.selectors';
 import {
   setSelectedMovie,
   setSpinning,
   setWheelOptions,
-} from '../../../../store/reducers/movie-picker.reducer.ts';
+} from '../../../../store/reducers/movie-picker.reducer';
+import { setNavigationDisabled } from '../../../../store/reducers/goathouse.reducer';
 
 const SpinningWheel: React.FC = () => {
   const [wheelData, setWheelData] = useState<WheelData[]>([{}]);
@@ -22,6 +23,12 @@ const SpinningWheel: React.FC = () => {
   const isSpinning = useSelector(selectSpinning);
   const selectedIndex = useSelector(selectSelectedIndex);
 
+  const handleStopSpinning = useCallback(() => {
+    dispatch(setSpinning(false));
+    dispatch(setNavigationDisabled(false));
+    dispatch(setSelectedMovie(wheelOptions[selectedIndex]));
+  }, [wheelOptions, selectedIndex]);
+
   useEffect(() => {
     dispatch(setWheelOptions(getPlaceholderMovies(7)));
   }, []);
@@ -30,11 +37,6 @@ const SpinningWheel: React.FC = () => {
     if (wheelOptions?.length === 0) setWheelData([{}]);
     else setWheelData(wheelOptions.map(option => ({ option: option.title })));
   }, [wheelOptions]);
-
-  const handleStopSpinning = useCallback(() => {
-    dispatch(setSpinning(false));
-    dispatch(setSelectedMovie(wheelOptions[selectedIndex]));
-  }, [wheelOptions, selectedIndex]);
 
   return (
     <div className='spinning-wheel'>

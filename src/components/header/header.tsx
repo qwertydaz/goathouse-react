@@ -1,7 +1,7 @@
 import './header.css';
 import React from 'react';
-import Avatar from './avatar/avatar.tsx';
-import Logo from './logo/logo.tsx';
+import Avatar from './avatar/avatar';
+import Logo from './logo/logo';
 
 const Header: React.FC = () => {
   return (

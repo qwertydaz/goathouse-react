@@ -2,17 +2,16 @@ import './navbar.css';
 import React, { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Tabs from './tabs';
+import { selectNavigationDisabled } from '../../store/selectors/goathouse.selectors';
+import { useSelector } from 'react-redux';
 
-interface NavbarProps {
-  disabled: boolean;
-}
-
-const Navbar: React.FC<NavbarProps> = ({
-  disabled = false,
-}) => {
+const Navbar: React.FC = () => {
   const navbarRef = useRef<HTMLUListElement>(null);
   const navbarSelectorRef = useRef<HTMLDivElement>(null);
+
   const [showSelector, setShowSelector] = useState(true);
+
+  const isNavigationDisabled = useSelector(selectNavigationDisabled);
 
   const location = useLocation();
   const navbarPaths = ['/', '/movie-picker'];
@@ -55,14 +54,14 @@ const Navbar: React.FC<NavbarProps> = ({
   };
 
   useEffect(() => {
-    if (navbarPaths.includes(location.pathname) && !disabled) setShowSelector(true);
+    if (navbarPaths.includes(location.pathname) && !isNavigationDisabled) setShowSelector(true);
     else setShowSelector(false);
 
     return setupSelector();
-  }, [location, disabled]);
+  }, [location, isNavigationDisabled]);
 
   return (
-    <div className={disabled ? 'navbar disabled' : 'navbar'}>
+    <div className={isNavigationDisabled ? 'navbar disabled' : 'navbar'}>
       <nav>
         <div className={showSelector ? 'navbar-selector' : 'navbar-selector hidden'} ref={navbarSelectorRef}></div>
         <Tabs navbarRef={navbarRef} location={location} />

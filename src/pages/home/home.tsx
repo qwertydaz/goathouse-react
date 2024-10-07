@@ -1,9 +1,9 @@
-import './goathouse.css';
+import './home.css';
 import React from 'react';
 
-const Goathouse: React.FC = () => {
+const Home: React.FC = () => {
   return (
-    <div className='goathouse'>
+    <div className='home'>
       <img
         className='goathouse-logo'
         src='https://cdn-icons-png.flaticon.com/512/2865/2865775.png'
@@ -13,4 +13,4 @@ const Goathouse: React.FC = () => {
   );
 };
 
-export default Goathouse;
+export default Home;

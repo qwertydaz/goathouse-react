@@ -29,21 +29,6 @@ const AlertBox: React.FC<AlertBoxProps> = ({
 
   const [isToggled, setIsToggled] = useState<boolean>(false);
 
-  useEffect(() => {
-    const toggler = document.querySelector(`.${togglerClassName}`);
-    if (toggler) toggler.addEventListener('click', closeAlert);
-    setIsToggled(true);
-
-    return () => {
-      if (toggler) toggler.removeEventListener('click', closeAlert);
-      setIsToggled(false);
-    };
-  }, [togglerClassName]);
-
-  useEffect(() => {
-    if (isToggled && shouldToggleOpen) openAlert();
-  }, [shouldToggleOpen]);
-
   const openAlert = useCallback(() => {
     alertTogglerRef.current = document.getElementById('open-alert') as HTMLInputElement;
     if (alertTogglerRef.current) {
@@ -61,6 +46,21 @@ const AlertBox: React.FC<AlertBoxProps> = ({
   const titleElement = useMemo(() => {
     return <h1 className='alert__title'>{title}</h1>
   }, [title]);
+
+  useEffect(() => {
+    const toggler = document.querySelector(`.${togglerClassName}`);
+    if (toggler) toggler.addEventListener('click', closeAlert);
+    setIsToggled(true);
+
+    return () => {
+      if (toggler) toggler.removeEventListener('click', closeAlert);
+      setIsToggled(false);
+    };
+  }, [togglerClassName]);
+
+  useEffect(() => {
+    if (isToggled && shouldToggleOpen) openAlert();
+  }, [shouldToggleOpen]);
 
   return (
     <div className='alert-box'>

@@ -1,10 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import moviePickerReducer from './reducers/movie-picker.reducer';
+import rootReducer from './reducers/root.reducer';
 
 const store = configureStore({
-  reducer: {
-    moviePicker: moviePickerReducer,
-  },
+  reducer: rootReducer,
 });
 
 export type RootState = ReturnType<typeof store.getState>;

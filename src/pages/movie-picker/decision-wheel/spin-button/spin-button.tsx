@@ -1,7 +1,8 @@
 import React, { useCallback } from 'react';
-import { setSpinning, setSelectedIndex } from '../../../../store/reducers/movie-picker.reducer.ts';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectSpinning, selectWheelOptions } from '../../../../store/selectors/movie-picker.selectors.ts';
+import { setSpinning, setSelectedIndex } from '../../../../store/reducers/movie-picker.reducer';
+import { selectSpinning, selectWheelOptions } from '../../../../store/selectors/movie-picker.selectors';
+import { setNavigationDisabled } from '../../../../store/reducers/goathouse.reducer';
 
 const SpinButton: React.FC = () => {
   const dispatch = useDispatch();
@@ -12,6 +13,7 @@ const SpinButton: React.FC = () => {
     const selectedIndex = Math.floor(Math.random() * wheelOptions.length);
     dispatch(setSelectedIndex(selectedIndex));
     dispatch(setSpinning(true));
+    dispatch(setNavigationDisabled(true));
   }, [wheelOptions]);
 
   return (
