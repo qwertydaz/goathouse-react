@@ -1,4 +1,3 @@
-import './movie-picker.css';
 import React from 'react';
 import DecisionWheel from './decision-wheel/decision-wheel';
 

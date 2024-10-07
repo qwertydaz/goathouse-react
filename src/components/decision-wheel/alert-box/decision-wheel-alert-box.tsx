@@ -1,8 +1,8 @@
 import React from 'react';
-import AlertBox from '../../../common/alert-box/alert-box';
+import AlertBox from '../../common/alert-box/alert-box';
 import DecisionWheelAlertBoxContent from './decision-wheel-alert-box-content';
 import { useSelector } from 'react-redux';
-import { selectSpinning } from '../../../../store/selectors/movie-picker.selectors';
+import { selectSpinning } from '../../../store/selectors/movie-picker.selectors.ts';
 
 const DecisionWheelAlertBox: React.FC = () => {
   const isSpinning = useSelector(selectSpinning);

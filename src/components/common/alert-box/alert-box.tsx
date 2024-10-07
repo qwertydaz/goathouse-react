@@ -1,5 +1,5 @@
-import './alert-box.css';
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import './alert-box.css';
 import confetti from 'canvas-confetti';
 
 interface AlertBoxProps {

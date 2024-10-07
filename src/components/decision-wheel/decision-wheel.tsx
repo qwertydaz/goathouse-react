@@ -1,8 +1,8 @@
-import './decision-wheel.css';
 import React from 'react';
-import SpinningWheel from './wheel/spinning-wheel';
-import SpinButton from './spin-button/spin-button';
-import DecisionWheelAlertBox from './alert-box/decision-wheel-alert-box';
+import './decision-wheel.css';
+import SpinningWheel from './wheel/spinning-wheel.tsx';
+import SpinButton from './spin-button/spin-button.tsx';
+import DecisionWheelAlertBox from './alert-box/decision-wheel-alert-box.tsx';
 
 const DecisionWheel: React.FC = () => {
   return (

@@ -4,15 +4,15 @@ import {
   selectSelectedIndex,
   selectSpinning,
   selectWheelOptions,
-} from '../../../../store/selectors/movie-picker.selectors';
+} from '../../../store/selectors/movie-picker.selectors.ts';
 import { useDispatch, useSelector } from 'react-redux';
 import { WheelData } from 'react-custom-roulette/dist/components/Wheel/types';
 import {
   setSelectedMovie,
   setSpinning,
   setWheelOptions,
-} from '../../../../store/reducers/movie-picker.reducer';
-import { colours, getPlaceholderMovies } from '../../../../consts/decision-wheel-consts';
+} from '../../../store/reducers/movie-picker.reducer.ts';
+import { colours, getPlaceholderMovies } from '../../../consts/decision-wheel-consts.ts';
 
 const SpinningWheel: React.FC = () => {
   const [wheelData, setWheelData] = useState<WheelData[]>([{}]);
