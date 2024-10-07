@@ -6,7 +6,7 @@ const Avatar: React.FC = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    // navigate('/profile');
+    navigate('/profile');
   };
 
   return (

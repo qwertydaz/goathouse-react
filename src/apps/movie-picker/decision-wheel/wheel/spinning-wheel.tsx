@@ -1,18 +1,18 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { Wheel } from 'react-custom-roulette';
+import { useDispatch, useSelector } from 'react-redux';
+import { WheelData } from 'react-custom-roulette/dist/components/Wheel/types';
+import { colours, getPlaceholderMovies } from '../../../../config/consts.ts';
 import {
   selectSelectedIndex,
   selectSpinning,
   selectWheelOptions,
-} from '../../../store/selectors/movie-picker.selectors.ts';
-import { useDispatch, useSelector } from 'react-redux';
-import { WheelData } from 'react-custom-roulette/dist/components/Wheel/types';
+} from '../../../../store/selectors/movie-picker.selectors.ts';
 import {
   setSelectedMovie,
   setSpinning,
   setWheelOptions,
-} from '../../../store/reducers/movie-picker.reducer.ts';
-import { colours, getPlaceholderMovies } from '../../../consts/decision-wheel-consts.ts';
+} from '../../../../store/reducers/movie-picker.reducer.ts';
 
 const SpinningWheel: React.FC = () => {
   const [wheelData, setWheelData] = useState<WheelData[]>([{}]);

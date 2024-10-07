@@ -1,4 +1,4 @@
-import { Movie } from './decision-wheel-types.ts';
+import { Movie } from './types';
 
 const colours = [
   'red',
