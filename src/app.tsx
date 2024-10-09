@@ -15,12 +15,16 @@ const App: React.FC = () => {
       <Navbar />
 
       <div className='pages'>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/movie-lists' element={<MovieLists />} />
-          <Route path='/movie-picker' element={<MoviePicker />} />
-          <Route path='/profile' element={<Profile />} />
-        </Routes>
+        <div className='row' style={{ height: '100%' }}>
+          <div className='col'>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/movie-lists' element={<MovieLists />} />
+              <Route path='/movie-picker' element={<MoviePicker />} />
+              <Route path='/profile' element={<Profile />} />
+            </Routes>
+          </div>
+        </div>
       </div>
 
       <Footer />

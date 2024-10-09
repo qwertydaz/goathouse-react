@@ -4,4 +4,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+}
+
+.movie-list-dropdown-container {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.wheel-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
 }

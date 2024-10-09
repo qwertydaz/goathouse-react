@@ -1,0 +1,7 @@
+.dropdown * {
+    z-index: 100;
+}
+
+.movie-list-dropdown {
+    width: 100%;
+}

@@ -6,21 +6,12 @@ import MovieListDropdown from '../../components/dropdowns/movie-list-dropdown';
 const MoviePicker: React.FC = () => {
   return (
     <div className='movie-picker'>
-      <div className='row' style={{ width: '100%' }}>
-        <div className='col'>
-          <div className='row'>
-            <div className='col'>
-              <h4>Pick your Movie List:</h4>
-              <MovieListDropdown />
-            </div>
-          </div>
+      <div className='movie-list-dropdown-container'>
+        <MovieListDropdown />
+      </div>
 
-          <div className='row'>
-            <div className='col' style={{ display: 'flex', justifyContent: 'center'}}>
-              <DecisionWheel />
-            </div>
-          </div>
-        </div>
+      <div className='wheel-container'>
+        <DecisionWheel />
       </div>
     </div>
   );

@@ -1,3 +1,4 @@
+import './dropdowns.css';
 import React from 'react';
 import { DropdownOption } from '../../config/types';
 import { placeholderMovieLists } from '../../config/consts';
@@ -15,7 +16,7 @@ const MovieListDropdown: React.FC = () => {
 
   return (
     <div className='movie-list-dropdown'>
-      <Dropdown getOptions={getMovieLists} />
+      <Dropdown getOptions={getMovieLists} placeholder='Pick your movie list...' />
     </div>
   );
 };
