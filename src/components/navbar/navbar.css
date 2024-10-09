@@ -1,20 +1,22 @@
 .navbar {
     background: #5161ce;
-    float: left;
-    overflow: hidden;
-    position: relative;
+    overflow-x: auto;
+    white-space: nowrap;
     width: 100%;
-    padding: 0 5px 0 5px;
+    padding: 0 5px;
+    position: relative;
 }
 
 .navbar ul {
     padding: 0;
     margin: 0;
+    display: inline-block;
+    white-space: nowrap;
 }
 
 .navbar li {
     list-style-type: none;
-    float: left;
+    display: inline-block;
 }
 
 .navbar ul li a {
@@ -28,7 +30,6 @@
     transition-duration: 0.7s;
     transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     position: relative;
-    z-index: 1;
 }
 
 .navbar ul li.active a {
@@ -40,7 +41,7 @@
 .navbar-selector {
     display: inline-block;
     position: absolute;
-    height: 100%;
+    height: 35px;
     top: 10px;
     left: 0;
     transition-duration: 0.5s;

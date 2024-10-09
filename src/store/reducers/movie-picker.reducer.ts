@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Movie } from '../../pages/movie-picker/config/types';
+import { Movie } from '../../config/types';
 
 interface MoviePickerState {
   selectedMovie?: Movie;

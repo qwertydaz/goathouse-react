@@ -78,9 +78,24 @@ type Movie = {
   releaseDate: string,
 };
 
+type MovieList = {
+  id: number;
+  name: string;
+  owners: string[];
+};
+
+type Friend = {
+  id: number;
+  username: string;
+  name: string;
+  mutuals: string[];
+};
+
 export type {
+  Movie,
   MovieResponse,
   ShortMovieResponse,
   PageableMovieResponse,
-  Movie,
+  MovieList,
+  Friend,
 };

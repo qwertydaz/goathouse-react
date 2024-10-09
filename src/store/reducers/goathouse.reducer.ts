@@ -1,11 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { CellStyle } from 'ag-grid-community';
 
 interface GoathouseState {
   isNavigationDisabled: boolean;
+  agGridButtonStyle: CellStyle;
 }
 
 const initialState: GoathouseState = {
   isNavigationDisabled: false,
+  agGridButtonStyle: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 };
 
 const goathouseSlice = createSlice({

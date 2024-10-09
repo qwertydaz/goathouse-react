@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
   const isNavigationDisabled = useSelector(selectNavigationDisabled);
 
   const location = useLocation();
-  const navbarPaths = ['/', '/movie-picker'];
+  const navbarPaths = ['/', '/movie-lists', '/movie-picker'];
 
   const updateSelectorPosition = (activeItem: HTMLElement) => {
     const activeWidthNewAnimWidth = activeItem.clientWidth;

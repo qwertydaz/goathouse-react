@@ -28,10 +28,89 @@ body {
     display: flex;
     flex-direction: column;
     flex: 1;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
+    margin-top: 20px;
+    overflow-y: auto;
+}
+
+.button {
+    border-radius: 6px;
+    padding: 10px 20px;
+}
+
+.grid-action {
+    height: 100%;
+    font-weight: bold;
+    padding: 0;
 }
 
 .disabled {
     pointer-events: none;
     cursor: not-allowed;
+}
+
+.bordered {
+    border-style: dotted;
+    border-radius: 10px;
+}
+
+.primary {
+    background: #5161ce;
+    color: white;
+    font-weight: bold;
+}
+
+.important {
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+}
+
+.block {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+}
+
+.col, .col-1, .col-2, .col-half {
+    width: 100%;
+    min-height: 1px;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.col-1 {
+    flex: 1.5;
+    flex-basis: 0;
+    max-width: 40%;
+}
+
+.col-2 {
+    flex: 2;
+    flex-basis: 0;
+    max-width: 60%;
+}
+
+@media (max-width: 768px) {
+    .col-1, .col-2 {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+.col-half {
+    flex: 1;
+    max-width: 50%;
 }

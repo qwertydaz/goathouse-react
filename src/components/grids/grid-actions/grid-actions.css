@@ -1,0 +1,21 @@
+.grid-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.grid-actions .delete-grid-action,
+.grid-actions .navigate-grid-action {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.grid-actions .delete-grid-action {
+    margin-left: 5px;
+}

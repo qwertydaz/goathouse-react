@@ -15,6 +15,9 @@ const Tabs: React.FC<TabsProps> = ({
       <li className={location.pathname === '/' ? 'active' : ''}>
         <Link to={'/'}>Home</Link>
       </li>
+      <li className={location.pathname === '/movie-lists' ? 'active' : ''}>
+        <Link to={'/movie-lists'}>Movie Lists</Link>
+      </li>
       <li className={location.pathname === '/movie-picker' ? 'active' : ''}>
         <Link to={'/movie-picker'}>Movie Picker</Link>
       </li>

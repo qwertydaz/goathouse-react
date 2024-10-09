@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Wheel } from 'react-custom-roulette';
 import { useDispatch, useSelector } from 'react-redux';
 import { WheelData } from 'react-custom-roulette/dist/components/Wheel/types';
-import { colours, getPlaceholderMovies } from '../../config/consts';
+import { colours, getPlaceholderMovies } from '../../../../config/consts';
 import {
   selectSelectedIndex,
   selectSpinning,
