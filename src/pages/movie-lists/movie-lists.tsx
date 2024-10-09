@@ -11,7 +11,7 @@ const MovieLists: React.FC = () => {
             <MovieListsGrid />
           </div>
 
-          <NavigateButton navigateTo='/movie-lists/create' label='Create New List' primary />
+          <NavigateButton navigateTo='/movie-lists/create' label='Create New List' primary disabled />
         </div>
       </div>
     </div>

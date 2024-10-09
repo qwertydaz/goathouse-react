@@ -33,17 +33,6 @@ body {
     overflow-y: auto;
 }
 
-.button {
-    border-radius: 6px;
-    padding: 10px 20px;
-}
-
-.grid-action {
-    height: 100%;
-    font-weight: bold;
-    padding: 0;
-}
-
 .disabled {
     pointer-events: none;
     cursor: not-allowed;
@@ -52,23 +41,6 @@ body {
 .bordered {
     border-style: dotted;
     border-radius: 10px;
-}
-
-.primary {
-    background: #5161ce;
-    color: white;
-    font-weight: bold;
-}
-
-.important {
-    background: rgba(255, 0, 0, 0.8);
-    color: white;
-}
-
-.block {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 .container {

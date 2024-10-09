@@ -39,7 +39,7 @@ const placeholderMovieLists: MovieList[] = [
 const placeholderFriendsList: Friend[] = [
   { id: 0, username: 'friend-one', name: 'Friend 1', mutuals: ['Friend 2', ' Friend 4'] },
   { id: 1, username: 'friend-two', name: 'Friend 2', mutuals: ['Friend 1'] },
-  { id: 2, username: 'friend-three', name: 'Friend 3', mutuals: [] },
+  { id: 2, username: 'friend-three', name: 'Friend 3', mutuals: ['-'] },
   { id: 3, username: 'friend-four', name: 'Friend 4', mutuals: ['Friend 1'] },
 ];
 

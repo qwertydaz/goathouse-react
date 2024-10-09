@@ -14,10 +14,11 @@ const FriendsListGrid: React.FC = () => {
 
   const columnDefs: ColDef<Friend>[] = [
     { field: 'name', headerName: 'Name', flex: 1 },
-    { field: 'mutuals', headerName: 'Mutuals', flex: 1 },
+    { field: 'mutuals', headerName: 'Mutuals', resizable: false, flex: 1 },
     {
       width: 75,
       cellStyle: agGridButtonStyle,
+      resizable: false,
       cellRenderer: (params: Friend) => {
         return (
           <GridActions

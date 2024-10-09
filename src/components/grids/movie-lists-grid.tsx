@@ -20,10 +20,11 @@ const MovieListsGrid: React.FC<MovieListsGridProps> = ({
 
   const columnDefs: ColDef<MovieList>[] = [
     { field: 'name', headerName: 'List Name', flex: 1 },
-    { field: 'owners', headerName: 'Owners', flex: 1 },
+    { field: 'owners', headerName: 'Owners', resizable: false, flex: 1 },
     {
       width: readOnly ? 75 : 125,
       cellStyle: agGridButtonStyle,
+      resizable: false,
       cellRenderer: () => {
         return (
           <GridActions

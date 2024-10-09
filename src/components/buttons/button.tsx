@@ -1,3 +1,4 @@
+import './button.css';
 import React from 'react';
 
 interface ButtonProps {
@@ -21,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className={`button ${primary ? 'primary' : ''} ${important ? 'important' : ''} ${block ? 'block' : ''} ${gridAction ? 'grid-action' : ''}`}
+      className={`button ${disabled ? 'disabled' : ''} ${primary ? 'primary' : ''} ${important ? 'important' : ''} ${block ? 'block' : ''} ${gridAction ? 'grid-action' : ''}`}
       onClick={onClick}
       disabled={disabled}
     >

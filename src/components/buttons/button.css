@@ -1,0 +1,31 @@
+.button {
+    border-radius: 6px;
+    padding: 10px 20px;
+}
+
+.button.disabled {
+    opacity: 0.6;
+}
+
+.grid-action {
+    height: 100%;
+    font-weight: bold;
+    padding: 0;
+}
+
+.primary {
+    background: #5161ce;
+    color: white;
+    font-weight: bold;
+}
+
+.important {
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+}
+
+.block {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
