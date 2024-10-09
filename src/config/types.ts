@@ -91,6 +91,11 @@ type Friend = {
   mutuals: string[];
 };
 
+type DropdownOption = {
+  value: string,
+  label: string,
+}
+
 export type {
   Movie,
   MovieResponse,
@@ -98,4 +103,5 @@ export type {
   PageableMovieResponse,
   MovieList,
   Friend,
+  DropdownOption,
 };
